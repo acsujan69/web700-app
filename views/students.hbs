@@ -1,39 +1,51 @@
-<div class="row">
+<div class="container">
+    <!-- Header section with a title and a button to add a new student -->
+    <div class="d-flex justify-content-between align-items-center mt-5">
+        <h1>Students</h1>
+        <a href="/students/add" class="btn btn-success btn-lg custom-btn">Add New Student</a>
+    </div>
 
-    <div class="col-md-12">
-        <br>
-        <h2>Students</h2>
-        <hr />
-        <div class="table-responsive">
-            <table class="table ">
-                <thead>
-                    <tr>
-                        <th>Student&nbsp;Num</th>
-                        <th>Full&nbsp;Name</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Status</th>
-                        <th>Course ID</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each students}}
-                    <tr>
-                        <td>{{studentNum}}</td>
-                        <td><a href="/student/{{studentNum}}">{{firstName}} {{lastName}}</a></td>
-                        <td><a href="mailto:{{email}}">{{email}}</a></td>
-                        <td>{{addressStreet}} {{addressCity}} {{addressProvince}}</td>
-                        <td>{{status}}</td>
-                        <td><a href="/students?course={{course}}">{{course}}</a></td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    {{#unless students}}
-    <div class="col-md-12 text-center">
-        <strong>{{message}}</strong>
-    </div>
-    {{/unless}}
+    <!-- Check if there are any students available -->
+    {{#if students.length}}
+    <!-- Table to display student details -->
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <!-- Table headers for each column -->
+                <th>Student Num</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Course ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate through each student and create a table row -->
+            {{#each students}}
+            <tr>
+                <!-- Display student number -->
+                <td>{{this.studentNum}}</td>
+                <!-- Display student's full name with a link to their detailed page -->
+                <td><a href="/student/{{this.studentNum}}">{{this.firstName}} {{this.lastName}}</a></td>
+                <!-- Display student's email address -->
+                <td>{{this.email}}</td>
+                <!-- Display student's address, including street, city, and province -->
+                <td>{{this.addressStreet}}, {{this.addressCity}}, {{this.addressProvince}}</td>
+                <!-- Display student's status -->
+                <td>{{this.status}}</td>
+                <!-- Display course ID with a link to filter students by course -->
+                <td><a href="/students?course={{this.course}}">{{this.course}}</a></td>
+                <!-- Button to remove the student with a link to the delete endpoint -->
+                <td><a href="/student/delete/{{this.studentNum}}" class="btn btn-danger">Remove</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <!-- Message displayed if there are no students available -->
+    <br>
+    <p style="text-align: center;">No students available</p>
+    {{/if}}
 </div>

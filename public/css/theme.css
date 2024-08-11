@@ -1,70 +1,140 @@
-/* Import Google Fonts - Roboto */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-/* Body */
-body {
-  background: linear-gradient(to bottom, #9f8ec8 0%, #f5f3fc 100%); /* Purple gradient background */
-  color: #333; /* Dark text color */
+body, html {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #f4e5e5, #e0b4b4); /* Light maroon gradient */
+    color: #333;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Navbar */
-.navbar {
-  background-color: #dccce6; /* Light purple background for navbar */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    color: #800000; /* Maroon */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+    margin-top: 1.5rem;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+table tr:nth-child(odd) {
+    background-color: #f4e5e5; /* Light maroon */
+}
+
+table tr:nth-child(even) {
+    background-color: #ffffff; 
+}
+
+.navbar-light {
+    background: linear-gradient(to right, #ffffff, #f4e5e5); /* Light maroon gradient */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .navbar-brand {
-  font-family: 'Lucida Console', Courier, monospace; /* Custom font for navbar brand */
+    font-family: 'Roboto', sans-serif; 
+    color: #800000; /* Maroon */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
 }
 
-/* Nav Link */
 .nav-link {
-  font-family: 'Roboto', sans-serif; /* Roboto font for nav links */
-  color: #333; /* Dark text color */
+    font-family: 'Roboto', sans-serif; 
+    color: #800000; /* Maroon */
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-  color: #6a1b9a; /* Dark purple on hover */
+    color: #550000; /* Darker maroon */
 }
 
-/* Form Group Label */
-.form-group label {
-  font-weight: bold; /* Bold font weight for form labels */
-}
-
-/* Primary Button */
 .btn-primary {
-  background-color: #4a148c; /* Purple primary button background */
-  border: none; /* Remove button border */
+    background-color: #800000; /* Maroon */
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif; 
 }
 
 .btn-primary:hover {
-  background-color: #6a1b9a; /* Darker purple on hover */
+    background: linear-gradient(to right, #550000, #800000); /* Darker to lighter maroon */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
 }
 
-/* Table Cells Inside "Odd" Numbered Table Rows */
-.table tr:nth-child(odd) td {
-  background-color: #f2f2f2; /* Light grey background for odd rows */
-}
-
-/* Heading Elements */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif; /* Roboto font for headings */
-  color: #4a148c; /* Purple heading text color */
-}
-
-/* Anchor Elements (HTML Links) */
 a {
-  color: #4a148c; /* Purple text color for links */
+    color: #800000; /* Maroon */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
 a:hover {
-  color: #6a1b9a; /* Darker purple on hover */
+    color: #550000; /* Darker maroon */
 }
 
-/* Fieldset Legends */
 legend {
-  font-family: 'Roboto', sans-serif; /* Roboto font for legends */
-  color: #4a148c; /* Purple legend text color */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif; 
+    color: #800000; /* Maroon */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.nav-item.active {
+    background-color: #800000; /* Maroon */
+    color: #ffffff; 
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #800000; /* Maroon */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    color: #333;
+}
+
+footer {
+    background-color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+footer a {
+    color: #800000; /* Maroon */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #550000; /* Darker maroon */
+}
+
+table tr:nth-child(odd) td {
+    background: linear-gradient(to right, #f4e5e5, #e0b4b4); /* Light maroon gradient */
 }
 
 .profile-img {
@@ -72,4 +142,9 @@ legend {
   height: 150px; /* Adjust height as needed */
   border-radius: 50%; /* This makes the image oval */
   object-fit: cover; /* Ensures the image covers the area */
+}
+
+.custom-btn {
+    padding: 10px 10px;
+    font-size: 1rem; /* Increase font size */
 }
